@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nourish & Flourish — Grow Together</title>
+  <meta name="description" content="A private wellness community app for women to grow together in faith, health, and accountability." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #FAF8F3;
+      --parchment: #EDE8D8;
+      --tan: #C4AF8E;
+      --earth: #8B7355;
+      --walnut: #4A3F2F;
+      --sage: #8BA888;
+      --text: #2C2418;
+      --muted: #6B5F50;
+      --light: #A89880;
+    }
+    body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+    h1, h2, h3, .serif { font-family: 'Cormorant Garamond', serif; }
+
+    /* NAV */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 48px; border-bottom: 1px solid var(--parchment); }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--walnut); letter-spacing: 0.5px; }
+    nav a { font-size: 13px; color: var(--muted); text-decoration: none; letter-spacing: 0.5px; }
+    nav a:hover { color: var(--walnut); }
+
+    /* HERO */
+    .hero { text-align: center; padding: 100px 24px 80px; max-width: 700px; margin: 0 auto; }
+    .hero-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--earth); margin-bottom: 20px; }
+    .hero h1 { font-size: clamp(48px, 8vw, 72px); font-weight: 400; color: var(--walnut); line-height: 1.1; margin-bottom: 24px; }
+    .hero p { font-size: 18px; color: var(--muted); font-weight: 300; max-width: 480px; margin: 0 auto 40px; }
+    .hero-badge { display: inline-block; background: var(--parchment); color: var(--earth); font-size: 12px; padding: 8px 20px; border-radius: 99px; letter-spacing: 1px; text-transform: uppercase; border: 1px solid var(--tan); }
+
+    /* DIVIDER */
+    .divider { width: 60px; height: 1px; background: var(--tan); margin: 0 auto; }
+
+    /* FEATURES */
+    .features { padding: 80px 24px; max-width: 900px; margin: 0 auto; }
+    .features-title { text-align: center; font-size: 36px; color: var(--walnut); font-weight: 400; margin-bottom: 12px; }
+    .features-sub { text-align: center; color: var(--muted); font-size: 15px; margin-bottom: 56px; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; }
+    .feature { background: white; border-radius: 20px; padding: 32px 24px; border: 1px solid var(--parchment); text-align: center; }
+    .feature-icon { font-size: 36px; margin-bottom: 16px; }
+    .feature h3 { font-size: 20px; color: var(--walnut); font-weight: 500; margin-bottom: 10px; }
+    .feature p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* ABOUT */
+    .about { background: var(--walnut); padding: 100px 24px; text-align: center; }
+    .about-inner { max-width: 600px; margin: 0 auto; }
+    .about-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--tan); margin-bottom: 20px; }
+    .about h2 { font-size: 40px; color: white; font-weight: 400; margin-bottom: 24px; line-height: 1.2; }
+    .about p { font-size: 16px; color: rgba(255,255,255,0.75); font-weight: 300; line-height: 1.8; }
+
+    /* DOWNLOAD */
+    .download { padding: 100px 24px; text-align: center; }
+    .download h2 { font-size: 40px; color: var(--walnut); font-weight: 400; margin-bottom: 16px; }
+    .download p { font-size: 16px; color: var(--muted); margin-bottom: 40px; }
+    .download-btn { display: inline-block; background: var(--walnut); color: white; font-family: 'Jost', sans-serif; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; padding: 16px 40px; border-radius: 99px; text-decoration: none; transition: background 0.2s; }
+    .download-btn:hover { background: var(--earth); }
+    .download-note { margin-top: 16px; font-size: 13px; color: var(--light); font-style: italic; }
+
+    /* FOOTER */
+    footer { background: var(--parchment); padding: 40px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; border-top: 1px solid var(--tan); }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--walnut); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--walnut); }
+    .footer-copy { font-size: 12px; color: var(--light); width: 100%; text-align: center; margin-top: 8px; }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 24px; }
+      footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Nourish & Flourish</div>
+    <a href="privacy.html">Privacy Policy</a>
+  </nav>
+
+  <section class="hero">
+    <p class="hero-eyebrow">A wellness community for women</p>
+    <h1>Grow together in faith, health & community</h1>
+    <p>A private app for small groups of women to share devotionals, recipes, goals, and real encouragement.</p>
+    <span class="hero-badge">Now on TestFlight · Coming soon to App Store</span>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="features">
+    <h2 class="features-title">Everything your circle needs</h2>
+    <p class="features-sub">Built for the women who want to grow — together.</p>
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-icon">📖</div>
+        <h3>Daily Devotionals</h3>
+        <p>Start each day in the Word together. Share reflections and encouragement with your group.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🎯</div>
+        <h3>Goal Tracking</h3>
+        <p>Set wellness goals and stay accountable. Your sisters cheer you on every step of the way.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🥗</div>
+        <h3>Recipe Garden</h3>
+        <p>Share healthy recipes, smoothies, and meal ideas with the women in your group.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">💬</div>
+        <h3>Private Group Chat</h3>
+        <p>Stay connected in a private, intimate space just for your circle. No noise, just community.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🌿</div>
+        <h3>Wellness Tips</h3>
+        <p>Share what's working — workouts, routines, recipes, and more. Mind, body, and spirit.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">✨</div>
+        <h3>Your Themes</h3>
+        <p>Personalize your experience with beautiful themes that match your style.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="about-inner">
+      <p class="about-eyebrow">Our story</p>
+      <h2>Made for women who want more</h2>
+      <p>Nourish & Flourish was created for women who want to grow — in faith, in health, and in community. It's a private, intimate space just for your circle. No ads, no strangers, no noise. Just you and your sisters, growing together.</p>
+    </div>
+  </section>
+
+  <section class="download">
+    <h2>Ready to flourish?</h2>
+    <p>Available now on TestFlight. Coming soon to the App Store.</p>
+    <a href="https://testflight.apple.com" class="download-btn">Download on TestFlight</a>
+    <p class="download-note">Requires an invite from your group admin</p>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Nourish & Flourish</div>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="mailto:nourishandflourishapp@gmail.com">Contact</a>
+    </div>
+    <p class="footer-copy">© 2026 Nourish & Flourish. Made with love.</p>
+  </footer>
+
+</body>
+</html>
